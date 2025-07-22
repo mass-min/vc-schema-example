@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VerifiedCredential",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "type": "array"
+    },
+    "type": {
+      "type": "array"
+    },
+    "issuer": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "issuanceDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "age": { "type": "string" }
+      },
+      "required": ["name", "email", "age"]
+    }
+  },
+  "required": ["@context", "type", "issuer", "subject", "data"]
+}
